@@ -60,6 +60,13 @@ def instance(name, audio_enabled):
     driver.find_element(By.XPATH, '//*[@id="inputname"]').send_keys(name)
     driver.find_element(By.XPATH, '//*[@id="joinBtn"]').click()
 
+    try:
+        passcode
+        driver.find_element(By.XPATH, '//*[@id="inputpasscode"]').send_keys(passcode)
+        driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/div[2]/div[2]/div/form/div/div[3]/div').click() #passcode
+    except (NoSuchElementException, NameError):
+        pass
+
     #WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, '//*[@id="foot-bar"]')))
 
     while True:
@@ -109,7 +116,15 @@ elif api == "true":
     print("\n")
     print(Colorate.Horizontal(Colors.black_to_white, Center.XCenter(Box.DoubleCube("    Using API    "))))
 
-orgUrl = input(Colorate.Horizontal(Colors.green_to_white, "\n├| URL > "))
+orgUrl = input(Colorate.Horizontal(Colors.green_to_white, "\n├| URL / Meeting ID > "))
+
+if "zoom.us" not in orgUrl:
+    passcode = input(Colorate.Horizontal(Colors.green_to_white, "├| Passcode (leave blank if none) > "))
+    orgUrl = "https://us05web.zoom.us/j/" + orgUrl
+
+elif "?pwd=" not in orgUrl:
+    passcode = input(Colorate.Horizontal(Colors.green_to_white, "├| Passcode (leave blank if none) > "))
+
 instances = int(input(Colorate.Horizontal(Colors.green_to_white, "├| Instances > ")))
 
 zoomUrl = orgUrl.replace("/j/", "/wc/join/")
