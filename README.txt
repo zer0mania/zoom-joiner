@@ -5,6 +5,8 @@
 				/____/\___/ \___/|_| |_| |_| \___/ \___/|_|_| |_|\___|_|    
 
 									   tg: @zer0mania
+									   
+			Join zoom meetings with multiple instances with random or predetermined names from a list.
 
 You can configure the default camera device in config.txt by going to chrome://settings/content/camera and reading the option value of the selected camera interface with inspect element. Once you have copied it you may put the camera code in the parentheses according to default_video_capture_Device. Same goes for the microphone by going to chrome://settings/content/microphone and changing the default_audio_capture_device key value. If none is specified It will use the default settings.
 
