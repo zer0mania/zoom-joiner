@@ -1,0 +1,6 @@
+{
+	"api": "true",
+	"list": "false",
+	"media.default_video_capture_Device": "OBS Virtual Camera",
+	"media.default_audio_capture_device": ""
+}

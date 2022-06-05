@@ -1,0 +1,4 @@
+chromedriver_autoinstaller
+selenium
+pystyle
+requests
